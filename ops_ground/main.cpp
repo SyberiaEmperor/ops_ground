@@ -22,7 +22,6 @@ int main()
 	if (firstSubr.isValid())
 	{
 		SubroutineDeclaration& main = *firstSubr;
-		cout << main.getDefinition().getType().getParameterCount() << endl;;
 		BlockStatement& body = main.getBodyBlock();
 		BlockStatement::Iterator stmt = body.getFirst();
 		int stmtCount = 0;
@@ -31,6 +30,7 @@ int main()
 			stmtCount += 1;
 			stmt.goNext();
 		}
+		cout << stmtCount << endl;
 	}
 	cout << "sfg" << endl;
 	system("pause");

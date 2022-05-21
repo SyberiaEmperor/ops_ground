@@ -16,5 +16,5 @@ PYBIND11_MODULE(Frontend, m)
 	py::class_<OPS::Frontend::Frontend>(m, "Frontend")
 		.def(py::init<>())
 		.def("compileSingleFile", &(OPS::Frontend::Frontend::compileSingleFile))
-		.def("getProgramUnit", &(OPS::Frontend::Frontend::getProgramUnit));
+		.def("getProgramUnit", &(OPS::Frontend::Frontend::getProgramUnit),py::return_value_policy::reference);
 }

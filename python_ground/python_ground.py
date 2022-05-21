@@ -12,4 +12,18 @@ if res.error_count()>0:
     exit(0)
 
 tunit = front.getProgramUnit().getUnit(0)
+firstSub = tunit.getGlobals().getFirstSubr()
 
+print(firstSub.isValid())
+
+if firstSub.isValid():
+    subDecl = firstSub.dereference()
+    body = subDecl.getBodyBlock()
+    stmt = body.getFirst()
+    count = 0
+    while stmt.isValid():
+        count+=1
+        stmt.goNext()
+
+    print(count)
+    
